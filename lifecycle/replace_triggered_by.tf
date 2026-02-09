@@ -1,4 +1,4 @@
-resource "aws_instance" "demo" {
+resource "aws_instance" "replace_triggered_demo" {
   ami           = "ami-02781fbdc79017564"
   instance_type = "t3.micro"
   subnet_id     = aws_subnet.my_subnet.id
