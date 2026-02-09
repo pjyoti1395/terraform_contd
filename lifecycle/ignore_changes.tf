@@ -1,9 +1,9 @@
 resource "aws_instance" "ignore_changes" {
   ami           = "ami-02781fbdc79017564"
   instance_type = "t3.micro"
-  subnet_id     =  "subnet-0e5c006eebd9c3f91"
+  subnet_id     =  "subnet-051e2582de50c27d9"
    tags = {
-    Name = "ignore-changes-ec2"
+    Name = "Lifecycle_ignore_Changes_EC2"
     Env  = terraform.workspace
   }
 
