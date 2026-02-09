@@ -1,0 +1,16 @@
+resource "aws_instance" "demo" {
+  ami           = "ami-02781fbdc79017564"
+  instance_type = "t3.micro"
+  subnet_id     = aws_subnet.my_subnet.id
+  vpc_security_group_ids = [aws_security_group.my_sg.id]
+
+  lifecycle {
+    replace_triggered_by = [
+      aws_security_group.my_sg
+    ]
+  }
+
+  tags = {
+    Name = "replace-trigger-demo"
+  }
+}
